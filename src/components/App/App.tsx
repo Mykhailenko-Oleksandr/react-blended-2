@@ -55,7 +55,6 @@ export default function App() {
             </>
           }
         </Container>
-        Home page
       </Section>
     </>
   );
