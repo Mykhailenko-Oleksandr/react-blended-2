@@ -8,6 +8,7 @@ import Text from "../Text/Text";
 import PhotosGallery from "../PhotosGallery/PhotosGallery";
 import type { Photo } from "../../types/photo";
 import Modal from "../Modal/Modal";
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
   const [photos, setPhotos] = useState<Photo[]>([]);
@@ -54,6 +55,7 @@ export default function App() {
               )}
             </>
           }
+          <Toaster />
         </Container>
       </Section>
     </>

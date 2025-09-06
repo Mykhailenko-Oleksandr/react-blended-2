@@ -13,7 +13,7 @@ export default function Form({ onSubmit }: FormProps) {
   function handleSubmit(formData: FormData) {
     const searchWord = formData.get("search") as string;
     if (searchWord.trim() === "") {
-      notify()
+      notify();
       return;
     }
     onSubmit(searchWord);
