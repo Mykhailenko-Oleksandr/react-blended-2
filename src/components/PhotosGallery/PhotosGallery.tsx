@@ -14,18 +14,10 @@ export default function PhotosGallery({
 }: PhotosGalleryProps) {
   return (
     <Grid>
-      {photos.map(({ id, avg_color, alt, src }) => {
+      {photos.map((photo) => {
         return (
-          <GridItem
-            key={id}
-            onModalOpen={() => onModalOpen({ id, avg_color, alt, src })}
-          >
-            <PhotosGalleryItem
-              avg_color={avg_color}
-              alt={alt}
-              src={src}
-              id={""}
-            />
+          <GridItem key={photo.id} onModalOpen={() => onModalOpen(photo)}>
+            <PhotosGalleryItem photoEl={photo} />
           </GridItem>
         );
       })}

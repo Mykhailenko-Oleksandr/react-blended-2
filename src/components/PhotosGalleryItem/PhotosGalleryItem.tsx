@@ -2,16 +2,20 @@ import type { Photo } from "../../types/photo";
 
 import styles from "./PhotosGalleryItem.module.css";
 
-export default function PhotosGalleryItem({ avg_color, alt, src }: Photo) {
+interface PhotosGalleryItemProps {
+  photoEl: Photo;
+}
+
+export default function PhotosGalleryItem({ photoEl }: PhotosGalleryItemProps) {
   return (
     <div
       className={styles.thumb}
       style={{
-        backgroundColor: avg_color,
-        borderColor: avg_color,
+        backgroundColor: photoEl.avg_color,
+        borderColor: photoEl.avg_color,
       }}
     >
-      <img src={src.original} alt={alt} />
+      <img src={photoEl.src.original} alt={photoEl.alt} />
     </div>
   );
 }

@@ -1,8 +1,7 @@
 import { createPortal } from "react-dom";
 import styled from "./Modal.module.css";
 import type { Photo } from "../../types/photo";
-import type React from "react";
-import { useEffect } from "react";
+import { useEffect, type MouseEvent } from "react";
 
 interface ModalProps {
   photo: Photo;
@@ -10,7 +9,7 @@ interface ModalProps {
 }
 
 export default function Modal({ photo, onClose }: ModalProps) {
-  function handleBackdropClick(event: React.MouseEvent<HTMLDivElement>) {
+  function handleBackdropClick(event: MouseEvent<HTMLDivElement>) {
     if (event.target === event.currentTarget) {
       onClose();
     }
@@ -47,7 +46,7 @@ export default function Modal({ photo, onClose }: ModalProps) {
         >
           &times;
         </button>
-        {<img src={photo.src.large} alt={photo.alt} />}
+        <img src={photo.src.large} alt={photo.alt} />
       </div>
     </div>,
     document.body

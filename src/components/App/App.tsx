@@ -21,7 +21,6 @@ export default function App() {
       setIsError(false);
       setLoader(true);
       const res = await getPhotos(searchWord);
-      console.log(res);
       setPhotos(res);
     } catch {
       setIsError(true);
