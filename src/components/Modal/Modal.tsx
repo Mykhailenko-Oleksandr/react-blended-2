@@ -40,10 +40,14 @@ export default function Modal({ photo, onClose }: ModalProps) {
       aria-modal="true"
     >
       <div className={styled.modal}>
-        <button className={styled.closeButton} aria-label="Close modal">
+        <button
+          onClick={onClose}
+          className={styled.closeButton}
+          aria-label="Close modal"
+        >
           &times;
         </button>
-        {<img src={photo.src.original} alt={photo.alt} />}
+        {<img src={photo.src.large} alt={photo.alt} />}
       </div>
     </div>,
     document.body

@@ -1,5 +1,6 @@
 import type { Photo } from "../../types/photo";
 import Grid from "../Grid/Grid";
+import GridItem from "../GridItem/GridItem";
 import PhotosGalleryItem from "../PhotosGalleryItem/PhotosGalleryItem";
 
 interface PhotosGalleryProps {
@@ -15,14 +16,17 @@ export default function PhotosGallery({
     <Grid>
       {photos.map(({ id, avg_color, alt, src }) => {
         return (
-          <li key={id} onClick={() => onModalOpen({ id, avg_color, alt, src })}>
+          <GridItem
+            key={id}
+            onModalOpen={() => onModalOpen({ id, avg_color, alt, src })}
+          >
             <PhotosGalleryItem
               avg_color={avg_color}
               alt={alt}
               src={src}
               id={""}
             />
-          </li>
+          </GridItem>
         );
       })}
     </Grid>
